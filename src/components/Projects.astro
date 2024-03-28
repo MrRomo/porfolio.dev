@@ -5,6 +5,10 @@ import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import Fastify from "./icons/Fastify.astro";
+import MongoDB from "./icons/MongoDB.astro";
+import Redis from "./icons/Redis.astro";
+import FastAPI from "./icons/FastAPI.astro";
+import Postgres from "./icons/Postgres.astro";
 
 const TAGS = {
   NEXT: {
@@ -22,24 +26,44 @@ const TAGS = {
     class: "bg-[#202020] text-white",
     icon: Fastify,
   },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#227722] text-white",
+    icon: MongoDB,
+  },
+  REDIS: {
+    name: "Redis",
+    class: "bg-[#781c10] text-white",
+    icon: Redis,
+  },
+  FASTAPI: {
+    name: "FastAPI",
+    class: "bg-green-200 text-gray-900",
+    icon: FastAPI,
+  },
+  POSTGRES: {
+    name: "PostgreSQL",
+    class: "bg-[#336791] text-white",
+    icon: Postgres,
+  }
 };
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Regalo Secreto Online",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.FASTIFY],
+      "Aplicacion web que presenta el juego de Amigo Secreto / Santa Secreto para jugar con amigos y familiares a distancia. Creada con Next.js y MongoDB, desplegado en Google App Engine.",
+    link: "https://regalosecreto.net",
+    // github: "https://github.com/pheralb/svgl",
+    image: "/projects/regalo.png",
+    tags: [TAGS.NEXT, TAGS.MONGODB],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Atenalink - Plataforma web para crear proyectos IoT",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Plataforma web para crear proyectos IoT con ESP8266, ESP32 o cualquier implementacion de hardware. Creada con Next.js, Fastify, FastAPI y Tailwind CSS. Utiliza firebase, redis y mongodb para almacenar datos y configuraciones. Desplegada en Google Cloud.",
+    link: "https://atenalink.com",
+    image: "/projects/atena.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.REDIS, TAGS.FASTIFY, TAGS.FASTAPI, TAGS.MONGODB, TAGS.POSTGRES],
   },
 ];
 ---
@@ -51,7 +75,6 @@ const PROJECTS = [
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
@@ -64,7 +87,7 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-row mb-2 gap-2 flex-wrap">
               {tags.map((tag) => (
                 <li>
                   <span
@@ -90,7 +113,7 @@ const PROJECTS = [
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Preview
+                  Ver proyecto
                 </LinkButton>
               )}
             </footer>
