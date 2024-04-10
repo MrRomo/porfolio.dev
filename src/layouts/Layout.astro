@@ -28,6 +28,7 @@ const { description, title } = Astro.props;
       property="og:image"
       content="https://ricardoromo.co/og.png"
     />
+    <meta property="og:description" content={description} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
