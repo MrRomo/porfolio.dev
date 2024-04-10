@@ -1,16 +1,16 @@
 ---
-import "@fontsource-variable/onest"
+import "@fontsource-variable/onest";
 
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import { ViewTransitions } from "astro:transitions"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { description, title } = Astro.props
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,13 +21,21 @@ const { description, title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content="Ricardo Romo - Fullstack Developer" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://ricardoromo.co" />
+    <meta
+      property="og:image"
+      content="https://ricardoromo.co/og.png"
+    />
+    <meta property="og:description" content={description} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
 
   <body class="relative text-black dark:text-white">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full 
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full
        bg-gray-[#010101] bg-[radial-gradient(ellipse_50%_50%_at_10%_-25%,rgba(120,120,120,0.8),rgba(255,255,255,0.9))]
       dark:bg-[#0c0c0c] dark:bg-[radial-gradient(ellipse_70%_50%_at_10%_-20%,rgba(250,120,120,0.3),rgba(255,255,255,0))]"
     >
