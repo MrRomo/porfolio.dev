@@ -1,5 +1,4 @@
 ---
-
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import { TAGS } from "./Tags.astro";
@@ -56,12 +55,12 @@ const PROJECTS = [
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-row my-2 gap-2 flex-wrap">
               {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
+                <li class="skewded">
+                  <span class={`flex text-xs ${tag.class} py-1 px-2 `}>
+                    <div class="inverso flex gap-x-2">
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </div>
                   </span>
                 </li>
               ))}
@@ -84,3 +83,21 @@ const PROJECTS = [
     ))
   }
 </div>
+
+<style>
+  .skewded {
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -ms-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    transform: skew(-20deg);
+  }
+
+  .inverso {
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+  }
+</style>

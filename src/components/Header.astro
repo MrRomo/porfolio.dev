@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
+import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = [
   {
@@ -22,58 +22,60 @@ const navItems = [
     label: "contacto",
     url: "mailto:jricardoromo21@gmail.com",
   },
-]
+];
 ---
 
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center bg-black backdrop-blur"
-  >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-green-500 dark:hover:text-green-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-    <ThemeToggle />
+  <nav class="flex px-3 text-sm font-medium paralelogramo text-gray-200 bg-black backdrop-blur">
+    <div
+      class="flex inverso justify-center items-center "
+    >
+      {
+        navItems.map((link) => (
+          <a
+            class="relative block px-2 py-2 transition hover:text-green-500 dark:hover:text-green-400"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+      <ThemeToggle />
+    </div>
   </nav>
 </header>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-green-500")
+              item.classList.add("text-green-500");
             } else {
-              item.classList.remove("text-green-500")
+              item.classList.remove("text-green-500");
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.5,
-    })
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // // Cleanup function
     // document.onvisibilitychange = () => {
@@ -85,7 +87,7 @@ const navItems = [
     //     })
     //   }
     // }
-  })
+  });
 </script>
 
 <style>
@@ -99,5 +101,21 @@ const navItems = [
     to {
       @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-900 bg-black/50 ring-green-700/10 border-green-600 border;
     }
+  }
+
+  .paralelogramo {
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -ms-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    transform: skew(-20deg);
+  }
+
+  .inverso {
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
   }
 </style>

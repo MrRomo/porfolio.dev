@@ -1,10 +1,34 @@
-<div class="flex items-center ">
-<span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
-  <span
-    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
-  ></span>
-  <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-700 bg-green-100 rounded-full cursor-pointer dark:bg-[#111] dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
-    <slot />
-  </div>
-</span>
+<div class="flex items-center skewded">
+  <span class="relative inline-flex overflow-hidden  p-[1px] ">
+    <span
+      class="inverso absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+    ></span>
+    <div
+      class=" inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-700 bg-green-100  cursor-pointer dark:bg-[#111] dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"
+    >
+    <div class="inverso">
+      <slot />
+    </div>
+    </div>
+  </span>
 </div>
+
+
+<style>
+  .skewded {
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -ms-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    transform: skew(-20deg);
+  }
+
+  .inverso {
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+  }
+</style>
+

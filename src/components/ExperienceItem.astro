@@ -44,10 +44,12 @@ const { title, company, description, link, date, tags } = Astro.props;
         tags.map((tag) => (
           <li>
             <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              class={`flex skewded gap-x-2  text-xs ${tag.class} py-1 px-2 `}
             >
+            <div class="inverso flex">
               <tag.icon class="size-4" />
               {tag.name}
+              </div>
             </span>
           </li>
         ))
@@ -79,3 +81,21 @@ const { title, company, description, link, date, tags } = Astro.props;
     }
   </div>
 </div>
+
+<style>
+  .skewded {
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -ms-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    transform: skew(-20deg);
+  }
+
+  .inverso {
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+  }
+</style>
