@@ -2,13 +2,14 @@
 import Badge from "@/components/Badge.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import { TAGS } from "@/components/Tags.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 
 import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout
-  title="Design System porfolio.dev"
+  title="Portafolio de Ricardo Romo"
   description="El catálogo de componentes de nuestro porfolio"
 >
   <SectionContainer class="py-44 pb-32 flex flex-col gap-y-10">
@@ -22,11 +23,31 @@ import Layout from "@/layouts/Layout.astro"
       <h1 class="mb-4 text-xl font-semibold">&lt SocialPill /&gt;</h1>
 
       <div class="flex">
-        <SocialPill href="https://linkedin.com/in/midudev">
+        <SocialPill href="https://linkedin.com/in/mrromo">
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
       </div>
+    </article>
+
+    <article class="mb-10">
+      <h1 class="mb-4 text-xl font-semibold">&lt;SectionContainer /&gt;</h1>
+
+      <SectionContainer class="bg-gray-100 p-4">
+        <p class="text-center">Contenido de la sección</p>
+      </SectionContainer>
+    </article>
+
+    <article class="mb-10">
+      <h1 class="mb-4 text-xl font-semibold">&lt;Tag /&gt;</h1>
+
+      <div class="flex gap-x-2">
+        <span
+        class={`flex gap-x-2 rounded-full text-xs ${TAGS.NEXT.class} py-1 px-2 `}
+      >
+        <TAGS.NEXT.icon class="size-4" />
+        NEXT JS
+      </span>
     </article>
   </SectionContainer>
 </Layout>
