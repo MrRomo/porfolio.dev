@@ -11,6 +11,7 @@ interface Props {
     name: string;
     class: string;
     icon: any;
+    link: string;
   }[];
 }
 
@@ -43,12 +44,14 @@ const { title, company, description, link, date, tags } = Astro.props;
       {
         tags.map((tag) => (
           <li>
-            <span
+            <a
+              href={tag.link}
+              target="_blank"
               class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
             >
               <tag.icon class="size-4" />
               {tag.name}
-            </span>
+            </a>
           </li>
         ))
       }

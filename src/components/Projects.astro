@@ -58,12 +58,14 @@ const PROJECTS = [
             <ul class="flex flex-row my-2 gap-2 flex-wrap">
               {tags.map((tag) => (
                 <li>
-                  <span
+                  <a
+                    href={tag.link}
+                    target="_blank"
                     class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
                   >
                     <tag.icon class="size-4" />
                     {tag.name}
-                  </span>
+                  </a>
                 </li>
               ))}
             </ul>
