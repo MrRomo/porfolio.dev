@@ -1,5 +1,4 @@
 ---
-
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import { TAGS } from "./Tags.astro";
@@ -21,8 +20,16 @@ const PROJECTS = [
       TAGS.POSTGRES,
       TAGS.FIREBASE,
       TAGS.DOCKER,
-      TAGS.PYTHON
+      TAGS.PYTHON,
     ],
+  },
+  {
+    title: "Printel 3D - Imprime tus modelos 3D",
+    description:
+      "Plataforma marketplace. Desarrollado con Next.js, Tailwind CSS, React y Supabase. Desplegado en vercel, le permite a los usuarios encontrar tecnicos y profesionales para imprimir sus modelos 3D basado en su ubicación.",
+    link: "https://printel-store.vercel.app",
+    image: "/projects/printel.png",
+    tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.POSTGRES],
   },
   {
     title: "Regalo Secreto Online",
