@@ -5,6 +5,19 @@ import { TAGS } from "./Tags.astro";
 
 const PROJECTS = [
   {
+    title: "Kassandra - Asistente de voz",
+    description:
+      "Asistente de voz creado con FastAPI, Docker y LangChain. Utiliza la tecnologia de agentes para realizar peticiones autonomas con una entrada de voz o texto. Proyecto en desarrollo.",
+    link: "https://www.tiktok.com/@ricardoromo.dev/video/7220531508656852230",
+    image: "/projects/kassandra.webp",
+    tags: [
+      TAGS.FASTAPI,
+      TAGS.DOCKER,
+      TAGS.PYTHON,
+      TAGS.LANGCHAIN,
+    ],
+  },
+  {
     title: "Atenalink - Plataforma web para crear proyectos IoT",
     description:
       "Plataforma web para crear proyectos IoT con ESP8266, ESP32 o cualquier implementacion de hardware que soporte el protocolo MQTT. Creada con Next.js, Fastify, FastAPI y Tailwind CSS. Utiliza firebase, redis y mongodb para almacenar datos y configuraciones. Desplegada en Google Cloud.",
@@ -14,7 +27,6 @@ const PROJECTS = [
       TAGS.NEXT,
       TAGS.TAILWIND,
       TAGS.REDIS,
-      TAGS.FASTIFY,
       TAGS.FASTAPI,
       TAGS.MONGODB,
       TAGS.POSTGRES,
