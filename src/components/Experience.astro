@@ -1,13 +1,15 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
 import { TAGS } from "./Tags.astro";
+import { FLAGS } from "./Flags.astro";
+
 const EXPERIENCIE = [
    {
-    date: "Octubre 2024",
+    date: "Octubre 2024 - Presente",
     title: "SSr. Fullstack Developer",
-    company: "LATAM Airlines - Chile",
+    company: "LATAM Airlines",
     description:
-      "Desarrollo de aplicaciones web en FastAPI y React.JS, desarrollador de herramientas internas en el equipo de Analitycs Data Operations.",
+      "Desarrollo de aplicaciones web en FastAPI y NEXT.JS, desarrollador de herramientas internas en el equipo de Analitycs Data Operations.",
     tags: [
       TAGS.FASTAPI,
       TAGS.BIGQUERY,
@@ -15,12 +17,14 @@ const EXPERIENCIE = [
       TAGS.POSTGRES,
       TAGS.DOCKER,
       TAGS.PYTHON,
+      TAGS.NEXT
     ],
+    flag: FLAGS.CHILE,
   },
  {
-    date: "Junio 2024",
+    date: "Junio 2024 - Febrero 2025",
     title: "SSr. Fullstack Developer",
-    company: "Teamcore Solutions - Chile",
+    company: "Teamcore Solutions",
     description:
       "Desarrollo de aplicaciones web en django y React.JS, mantenedor del proyecto Teamcore Legacy para FEMSA.",
     tags: [
@@ -31,6 +35,7 @@ const EXPERIENCIE = [
       TAGS.DOCKER,
       TAGS.PYTHON,
     ],
+    flag: FLAGS.CHILE,
   },
   {
     date: "Enero 2023 - Marzo 2024",
@@ -46,6 +51,7 @@ const EXPERIENCIE = [
       TAGS.DOCKER,
       TAGS.PYTHON,
     ],
+    flag: FLAGS.COLOMBIA,
   },
   {
     date: "Marzo 2021 - Enero 2023",
@@ -54,6 +60,7 @@ const EXPERIENCIE = [
     description:
       "Desarrollador de aplicaciones web con react, nodejs y firebase y PostgreSQL.",
     tags: [TAGS.FASTIFY, TAGS.REACT, TAGS.POSTGRES, TAGS.FIREBASE, TAGS.PYTHON],
+    flag: FLAGS.COLOMBIA,
   },
   {
     date: "Octubre 2020 - Diciembre 2020",
@@ -62,6 +69,7 @@ const EXPERIENCIE = [
     description:
       "Desarrollador de software backend de un integrador de pedidos de shopify de una tienda de perfumeria en linea. Integraba clientes, pedidos, envios y proveedores de envios.",
     tags: [TAGS.DJANGO, TAGS.POSTGRES, TAGS.PYTHON],
+    flag: FLAGS.COLOMBIA,
   },
   {
     date: "Septiembre 2020 - Octubre 2020",
@@ -70,6 +78,7 @@ const EXPERIENCIE = [
     description:
       "Desarrollador de software backend en un sistema de gestion de clientes para una prestadora de servicio de fibra optica.",
     tags: [TAGS.DJANGO, TAGS.POSTGRES, TAGS.PYTHON],
+    flag: FLAGS.EEUU,
   },
 ];
 ---

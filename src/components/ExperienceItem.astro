@@ -13,9 +13,10 @@ interface Props {
     icon: any;
     link: string;
   }[];
+  flag: { name: string; icon: any; class: string };
 }
 
-const { title, company, description, link, date, tags } = Astro.props;
+const { title, company, description, link, date, tags, flag } = Astro.props;
 ---
 
 <div
@@ -31,6 +32,12 @@ const { title, company, description, link, date, tags } = Astro.props;
       <h4 class="font-semibold text-xl text-gray-600 dark:text-white">
         {company}
       </h4>
+      <div class="flex items-center gap-2">
+        <flag.icon class="size-8" />
+        <span class="font-light text-gray-400 dark:text-gray-200"
+          >{flag.name}</span
+        >
+      </div>
       <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
         >{date}</time
       >
